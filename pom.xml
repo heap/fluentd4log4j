@@ -61,4 +61,31 @@
 	<organization>
 		<name>Twimba</name>
 	</organization>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>heap-maven-public</id>
+      <url>s3://heap-maven-public/snapshot</url>
+    </snapshotRepository>
+    <repository>
+      <id>heap-maven-public</id>
+      <url>s3://heap-maven-public/release</url>
+    </repository>
+  </distributionManagement>
+  <repositories>
+    <repository>
+      <id>heap-maven-public</id>
+      <url>s3://heap-maven-public/release</url>
+    </repository>
+  </repositories>
+
+  <build>
+    <extensions>
+      <extension>
+        <groupId>org.kuali.maven.wagons</groupId>
+        <artifactId>maven-s3-wagon</artifactId>
+        <version>1.2.1</version>
+      </extension>
+    </extensions>
+  </build>
 </project>
